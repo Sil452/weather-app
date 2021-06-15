@@ -16,12 +16,15 @@ app.get("/", function(req, res){
       const weatherApp = JSON.parse(data);
       const temp = weatherApp.main.temp;
       const description = weatherApp.weather[0].description;
-      console.log(temp);
-      console.log(description);
+      const icon = weatherApp.weather[0].icon;
+      const imgUrl = " http://openweathermap.org/img/wn/" + icon + "@2x.png"
+
+      res.write("<h1>The temperature in London is: " + temp + "</h1>");
+      res.write("<h3>" + description + "</h3>");
+      res.write("<img src =" + imgUrl + ">");
+      res.send();
     })
   });
-
-  res.send("Testing");
 });
 
 app.listen(3000, function(){
