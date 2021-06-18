@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 
 const app = express();
 app.use(bodyParser.urlencoded({extended: true}));
-
+app.use(express.static('public'));
 
 app.get("/", function(req, res){
   res.sendFile(__dirname + "/index.html")
@@ -26,10 +26,27 @@ app.post("/", function(req, res){
       const temp = weatherApp.main.temp;
       const description = weatherApp.weather[0].description;
       const icon = weatherApp.weather[0].icon;
-      const imgUrl = " http://openweathermap.org/img/wn/" + icon + "@2x.png"
-
-      res.write("<h1>The temperature in " + query + " is: " + temp + " degrees</h1>");
-      res.write("<h3>" + description + "</h3>");
+      const imgUrl = " http://openweathermap.org/img/wn/" + icon + "@2x.png";
+      
+      res.write(` <!DOCTYPE html>
+      <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <title>Weather App</title>
+          <meta name="viewport" content="width=device-width,initial-scale=1">
+          <link rel="stylesheet" type="text/css"   href="/css/style.css">
+        </head>
+        <body>
+          <h1>Welcome to Weather</h1>
+          <form action='/' method='POST'>
+            <label for='cityName'>Please choose a city</label>
+            <input type='text' name='cityName' id='cityName'>
+            <button>Check</button>
+          </form>
+        </body>
+      </html>`)
+      res.write("<h3>The temperature in " + query + " is: " + temp + " degrees</h3>");
+      res.write("<p>" + description + "</p>");
       res.write("<img src =" + imgUrl + ">");
       res.send();
     })
