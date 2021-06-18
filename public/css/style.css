@@ -1,3 +1,25 @@
 body{
-  background-color: aquamarine;
+  background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20190222/ourmid/pngtree-minimalistic-cartoon-plant-leaves-background-backgroundplant-backgroundleaf-backgroundbanenr-image_54447.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+
+
+.title{
+  margin-bottom: 40px !important;
+}
+
+.cityName{
+  margin-top: 40px !important;
+}
+
+.temp{
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
+}
+
+.form-in-post{
+  margin-bottom: 150px !important;
 }

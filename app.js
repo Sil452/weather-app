@@ -27,27 +27,40 @@ app.post("/", function(req, res){
       const description = weatherApp.weather[0].description;
       const icon = weatherApp.weather[0].icon;
       const imgUrl = " http://openweathermap.org/img/wn/" + icon + "@2x.png";
-      
-      res.write(` <!DOCTYPE html>
+
+      res.write(`
+      <!DOCTYPE html>
       <html lang="en">
         <head>
           <meta charset="UTF-8">
           <title>Weather App</title>
           <meta name="viewport" content="width=device-width,initial-scale=1">
           <link rel="stylesheet" type="text/css"   href="/css/style.css">
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
         </head>
+
         <body>
-          <h1>Welcome to Weather</h1>
-          <form action='/' method='POST'>
-            <label for='cityName'>Please choose a city</label>
-            <input type='text' name='cityName' id='cityName'>
-            <button>Check</button>
-          </form>
+          <section id="main-in-post" class="position-absolute bottom-0 start-50 translate-middle-x">
+          <div class="container form-in-post">
+            <form action='/' method='POST'>
+              <label for='cityName'>Please choose a city</label>
+              <input type='text' name='cityName' id='cityName'>
+              <button>Check</button>
+            </form>
+          </div>
+        </section>
         </body>
       </html>`)
-      res.write("<h3>The temperature in " + query + " is: " + temp + " degrees</h3>");
-      res.write("<p>" + description + "</p>");
-      res.write("<img src =" + imgUrl + ">");
+
+      res.write(`
+      <section id="weather" class="position-absolute top-0 start-50 translate-middle-x">
+        <div class="container text-center">
+          <h1 class="cityName"> ${query.toUpperCase()}</h1>
+          <h3 class="temp">${temp}°</h3>
+          <p>${description}</p>
+          <img  src = ${imgUrl}>
+        </div>
+      </section>`);
       res.send();
     })
   });
