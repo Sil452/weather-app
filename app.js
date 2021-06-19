@@ -23,7 +23,7 @@ app.post("/", function(req, res){
 
     response.on("data", function(data){
       const weatherApp = JSON.parse(data);
-      const temp = weatherApp.main.temp;
+      const temp = Math.floor(weatherApp.main.temp);
       const description = weatherApp.weather[0].description;
       const icon = weatherApp.weather[0].icon;
       const imgUrl = " http://openweathermap.org/img/wn/" + icon + "@2x.png";
@@ -37,15 +37,17 @@ app.post("/", function(req, res){
           <meta name="viewport" content="width=device-width,initial-scale=1">
           <link rel="stylesheet" type="text/css"   href="/css/style.css">
           <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+          <link rel="preconnect" href="https://fonts.gstatic.com">
+          <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans&display=swap" rel="stylesheet">
         </head>
 
         <body>
-          <section id="main-in-post" class="position-absolute bottom-0 start-50 translate-middle-x">
+          <section id="form" class="position-absolute bottom-0 start-50 translate-middle-x">
           <div class="container form-in-post">
             <form action='/' method='POST'>
-              <label for='cityName'>Please choose a city</label>
-              <input type='text' name='cityName' id='cityName'>
-              <button>Check</button>
+              <label for='cityName' class="form-label">Please choose a city</label>
+              <input class="form-control" type='text' name='cityName' id='cityName'>
+              <button class="btn btn-primary mb-3">Check</button>
             </form>
           </div>
         </section>

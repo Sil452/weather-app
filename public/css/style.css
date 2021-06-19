@@ -4,8 +4,38 @@ body{
   background-repeat: no-repeat;
 }
 
+h1{
+  font-family: 'Lobster', cursive !important;
+  font-size: 3rem !important;
+}
 
+form{
+  margin: auto;
+  text-align: center;
+}
 
+input{
+  background: transparent !important;
+  height: 30px !important;
+  border-color:rgba(0, 0, 0, 0.374) !important;
+  border-radius: 40px !important;
+}
+
+.btn{
+  font-size: 15px !important;
+  margin-top: 10px;
+  background-color: rgba(13, 199, 137, 0.313) !important;
+  border-color: rgb(7, 235, 159) !important;
+  border-radius: 30px !important;
+}
+
+.btn:hover{
+ background-color: rgb(13, 199, 137) !important;
+}
+
+#weather{
+  margin-top: 50px !important;
+}
 
 .title{
   margin-bottom: 40px !important;

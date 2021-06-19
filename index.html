@@ -6,17 +6,18 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" type="text/css"   href="/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans&display=swap" rel="stylesheet">
   </head>
   <body>
 
    <section id="main-in-get" class="position-absolute top-50 start-50 translate-middle">
      <div class="container">
        <h1 class="title">Welcome to MyWeatherApp</h1>
-       <p>Simply insert your city in the field below to check the current weather</p>
        <form action='/' method='POST'>
-         <label for='cityName'>Please choose a city</label>
-         <input type='text' name='cityName' id='cityName'>
-         <button>Check</button>
+         <label for='cityName' class="form-label">Please choose a city</label>
+         <input type='text' name='cityName' id='cityName' class="form-control">
+         <button class="btn btn-primary mb-3">Check</button>
        </form>
      </div>
    </section>
