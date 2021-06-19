@@ -1,7 +1,12 @@
 body{
   background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20190222/ourmid/pngtree-minimalistic-cartoon-plant-leaves-background-backgroundplant-backgroundleaf-backgroundbanenr-image_54447.jpg');
-  background-size: cover;
+  background-size: 100vw 100vh;
   background-repeat: no-repeat;
+}
+
+::selection{
+  background-color: rgba(13, 199, 137, 0.313);
+  color: white;
 }
 
 h1{
@@ -12,6 +17,10 @@ h1{
 form{
   margin: auto;
   text-align: center;
+}
+
+.form-control:focus{
+  box-shadow: 0 0 0 0.25rem rgba(13, 199, 137, 0.313) !important;
 }
 
 input{
@@ -52,4 +61,47 @@ input{
 
 .form-in-post{
   margin-bottom: 150px !important;
+}
+
+
+@media(max-width: 1024px) and (min-width: 768px){
+  .form-in-post{
+    margin-bottom: 400px !important;
+  }
+
+  .btn{
+    height: 85% !important;
+    font-size: 90% !important ;
+  }
+}
+
+
+@media(max-width: 655px) {
+
+  body{
+    background-image: url('https://image.freepik.com/free-vector/green-leaves-frame_53876-96425.jpg');
+    color: rgb(216, 210, 210) !important;
+  }
+
+  html{
+    font-size: 65% !important;
+  }
+
+  input{
+    height: 65% !important;
+    border-color:rgb(216, 210, 210) !important;
+  }
+
+.title{
+  text-align: center;
+}
+
+  .container{
+    margin-top: 75px !important;
+  }
+
+  .btn{
+    height: 80% !important;
+    font-size: 85% !important ;
+  }
 }
