@@ -19,7 +19,7 @@ app.get("/", function(req, res){
 
     https.get(url, function(response){
       console.log(response.statusCode);
-
+    
       response.on("data", function(data){
         const weatherApp = JSON.parse(data);
         const temp = Math.floor(weatherApp.main.temp);
