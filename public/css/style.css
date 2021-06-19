@@ -91,9 +91,13 @@ input{
 
 @media(max-width: 655px) {
 
+  :root{
+    --white: rgb(216, 210, 210);
+  }
+
   body{
     background-image: url('https://image.freepik.com/free-vector/green-leaves-frame_53876-96425.jpg');
-    color: rgb(216, 210, 210) !important;
+    color: var(--white) !important;
   }
 
   html{
@@ -102,7 +106,8 @@ input{
 
   input{
     height: 65% !important;
-    border-color:rgb(216, 210, 210) !important;
+    border-color:var(--white) !important;
+    color: var(--white) !important;
   }
 
 .title{
