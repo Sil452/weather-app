@@ -65,6 +65,19 @@ input{
 
 
 @media(max-width: 1024px) and (min-width: 768px){
+
+  body{
+    font-size: 25px !important;
+  }
+
+  label{
+    width: 330px;
+  }
+
+  .title{
+    text-align: center;
+  }
+
   .form-in-post{
     margin-bottom: 400px !important;
   }
