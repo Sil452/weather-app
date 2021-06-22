@@ -4,7 +4,7 @@
 
 body{
   background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20190222/ourmid/pngtree-minimalistic-cartoon-plant-leaves-background-backgroundplant-backgroundleaf-backgroundbanenr-image_54447.jpg');
-  background-size: 100vw 100vh;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 
@@ -101,6 +101,7 @@ input{
 
   body{
     background-image: url('https://image.freepik.com/free-vector/green-leaves-frame_53876-96425.jpg');
+    background-size: 100vw 100vh;
     color: var(--white) !important;
   }
 
@@ -127,3 +128,18 @@ input{
     font-size: 85% !important ;
   }
  }
+
+ /* failure page */
+
+ #failure-body{
+   background-image: none;
+   background-color: #343A40 !important;
+ }
+
+ .col-md-8 {
+  max-width: none !important;
+}
+
+.failure-text{
+  color: rgb(13, 199, 137);
+}
